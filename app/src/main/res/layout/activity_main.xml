@@ -15,7 +15,8 @@
         android:src="@drawable/logo_oficina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
 
     <TextView
@@ -24,9 +25,9 @@
         android:layout_height="wrap_content"
         android:background="#A39C9C"
         android:padding="6dp"
-        android:text="   Peças, serviços                                   Valor"
+        android:text="@string/pe_as_servi_os_valor"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />
 
@@ -36,102 +37,113 @@
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui1"
         android:paddingStart="10dp"
         android:paddingTop="20dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_faixa" />
+        app:layout_constraintTop_toBottomOf="@id/text_faixa"
+        tools:ignore="Autofill,DuplicateSpeakableTextCheck,RtlSymmetry,TextFields,TextContrastCheck" />
 
     <EditText
         android:id="@+id/edit_text2"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui2"
         android:paddingStart="10dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text1" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text1"
+        tools:ignore="Autofill,RtlSymmetry,TextFields,TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/edit_text3"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui3"
+        android:importantForAutofill="no"
         android:paddingStart="10dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text2" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text2"
+        tools:ignore="RtlSymmetry,TextFields,TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/edit_text4"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui4"
         android:paddingStart="10dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text3" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text3"
+        tools:ignore="Autofill,RtlSymmetry,TextFields,TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/edit_text5"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui5"
         android:paddingStart="10dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text4" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text4"
+        tools:ignore="Autofill,RtlSymmetry,TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_text6"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui6"
         android:paddingStart="10dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text5" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text5"
+        tools:ignore="Autofill,RtlSymmetry,TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_text7"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui7"
         android:paddingStart="10dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text6" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text6"
+        tools:ignore="Autofill,RtlSymmetry,TextFields,TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/edit_text8"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui8"
         android:paddingStart="10dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text7" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text7"
+        tools:ignore="Autofill,RtlSymmetry,TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_text9"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui9"
         android:paddingStart="10dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text8" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text8"
+        tools:ignore="Autofill,RtlSymmetry,TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_text10"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui"
+        android:hint="@string/digite_aqui"
         android:paddingStart="10dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text9" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text9"
+        tools:ignore="Autofill,RtlSymmetry,TextFields,TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/edit_valor1"
@@ -143,7 +155,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text1"
-        app:layout_constraintTop_toBottomOf="@id/text_faixa" />
+        app:layout_constraintTop_toBottomOf="@id/text_faixa"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/edit_valor2"
@@ -154,7 +167,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text1"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor1" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor1"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_valor3"
@@ -165,7 +179,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text2"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor2" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor2"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_valor4"
@@ -176,7 +191,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text3"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor3" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor3"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_valor5"
@@ -187,7 +203,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text4"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor4" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor4"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_valor6"
@@ -198,7 +215,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text5"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor5" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor5"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_valor7"
@@ -209,7 +227,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text6"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor6" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor6"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_valor8"
@@ -220,7 +239,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text7"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor7" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor7"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_valor9"
@@ -231,7 +251,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text8"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor8" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor8"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_valor10"
@@ -242,50 +263,58 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text9"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor9" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor9"
+        tools:ignore="Autofill,RtlSymmetry,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/edit_valorTotal"
         android:layout_width="78dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="18dp"
         android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textColor="#DC1919"
+        android:textSize="16sp"
+        android:paddingTop="4dp"
+        android:text="@string/r"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/edit_text10"
-        app:layout_constraintTop_toBottomOf="@id/edit_valor10" />
+        app:layout_constraintTop_toBottomOf="@id/edit_valor10"
+        tools:ignore="TextViewEdits,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintBounds" />
 
     <View
 
-        android:layout_width="60dp"
+        android:layout_width="70dp"
         android:layout_height="1dp"
+        android:paddingStart="8dp"
+
         android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:background="@color/black"
-        android:paddingStart="8dp"
+
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_valor10"
 
 
-        />
+        tools:ignore="RtlSymmetry" />
 
     <Button
+        android:layout_marginEnd="50dp"
         android:id="@+id/total_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#A39C9C"
-        android:text="ValorTotal"
+        android:text="@string/valortotal"
         android:textColor="@color/black"
+
         app:layout_constraintEnd_toStartOf="@id/edit_valorTotal"
-        app:layout_constraintTop_toBottomOf="@id/edit_text10" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text10"
+        app:layout_goneMarginEnd="100dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

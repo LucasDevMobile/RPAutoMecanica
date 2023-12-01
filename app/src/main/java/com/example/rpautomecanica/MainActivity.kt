@@ -2,8 +2,6 @@ package com.example.rpautomecanica
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rpautomecanica.databinding.ActivityMainBinding
 
@@ -94,7 +92,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val totalValue =
             (value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9 + value10)
-        binding.editValorTotal.text = (totalValue).toString()
+
+        binding.editValorTotal.text = "R$${"%.2f".format(totalValue)}"
+
+          //  (totalValue).toString()
+
+
+
+
 
 
 

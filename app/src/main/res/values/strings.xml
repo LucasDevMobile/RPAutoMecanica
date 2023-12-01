@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">RP Auto Mecanica</string>
+    <string name="valortotal">ValorTotal</string>
+    <string name="digite_aqui">Digite aqui</string>
+    <string name="digite_aqui9">Digite aqui</string>
+    <string name="digite_aqui8">Digite aqui</string>
+    <string name="digite_aqui7">Digite aqui</string>
+    <string name="digite_aqui6">Digite aqui</string>
+    <string name="digite_aqui5">Digite aqui</string>
+    <string name="digite_aqui4">Digite aqui</string>
+    <string name="digite_aqui3">Digite aqui</string>
+    <string name="digite_aqui2">Digite aqui</string>
+    <string name="digite_aqui1">Digite aqui</string>
+    <string name="pe_as_servi_os_valor">Peças, serviços Valor</string>
+    <string name="r">R$</string>
 </resources>
