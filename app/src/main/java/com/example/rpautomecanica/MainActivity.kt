@@ -16,9 +16,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.totalButton.setOnClickListener(this)
+
         val btnShare: Button = findViewById(R.id.botaoprint)
         btnShare.setOnClickListener {
             compartilharTela()
@@ -30,6 +33,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // Obtenha uma captura de tela
         val rootView: View = window.decorView.rootView
         rootView.isDrawingCacheEnabled = true
+
         val screenshot: Bitmap = Bitmap.createBitmap(rootView.drawingCache)
         rootView.isDrawingCacheEnabled = false
 
