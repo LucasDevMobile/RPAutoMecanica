@@ -4,6 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rpautomecanica.databinding.ActivityMainBinding
+import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
+import android.provider.MediaStore
+import android.widget.Button
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -12,13 +18,39 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.totalButton.setOnClickListener(this)
+        val btnShare: Button = findViewById(R.id.botaoprint)
+        btnShare.setOnClickListener {
+            compartilharTela()
+        }
 
     }
 
-    override fun onClick(view: View?) {
+    fun compartilharTela() {
+        // Obtenha uma captura de tela
+        val rootView: View = window.decorView.rootView
+        rootView.isDrawingCacheEnabled = true
+        val screenshot: Bitmap = Bitmap.createBitmap(rootView.drawingCache)
+        rootView.isDrawingCacheEnabled = false
 
+        // Crie uma intenção de compartilhamento
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.type = "image/png" // ou "text/plain" para compartilhar texto
+
+        // Salve a captura de tela em algum lugar temporário
+        // (você também pode salvar em cache ou armazenamento externo)
+        val path = MediaStore.Images.Media.insertImage(contentResolver, screenshot, "Screenshot", null)
+        val screenshotUri = Uri.parse(path)
+
+        // Adicione a captura de tela à intenção
+        shareIntent.putExtra(Intent.EXTRA_STREAM, screenshotUri)
+
+        // Inicie a atividade de compartilhamento
+        startActivity(Intent.createChooser(shareIntent, "Compartilhar via"))
+    }
+
+
+    override fun onClick(view: View?) {
         if (view != null) {
             if (view.id == R.id.total_button) {
                 calculate()
@@ -95,7 +127,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.editValorTotal.text = "R$${"%.2f".format(totalValue)}"
 
-          //  (totalValue).toString()
+
 
 
 
