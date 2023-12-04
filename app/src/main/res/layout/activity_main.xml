@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:background="#A39C9C"
         android:padding="6dp"
-        android:text="@string/pe_as_servi_os_valor"
+        android:text="Peças,serviços                                                      Valor"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
