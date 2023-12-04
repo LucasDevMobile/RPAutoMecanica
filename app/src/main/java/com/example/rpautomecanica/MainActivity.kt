@@ -7,8 +7,12 @@ import com.example.rpautomecanica.databinding.ActivityMainBinding
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
+import android.os.StrictMode
 import android.provider.MediaStore
 import android.widget.Button
+import java.io.File
+import java.io.FileOutputStream
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -16,6 +20,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        StrictMode.VmPolicy.Builder().build().also {
+            StrictMode.setVmPolicy(it)
+        }
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -29,7 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    fun compartilharTela() {
+    private fun compartilharTela() {
         // Obtenha uma captura de tela
         val rootView: View = window.decorView.rootView
         rootView.isDrawingCacheEnabled = true
@@ -37,21 +45,31 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val screenshot: Bitmap = Bitmap.createBitmap(rootView.drawingCache)
         rootView.isDrawingCacheEnabled = false
 
-        // Crie uma intenção de compartilhamento
-        val shareIntent = Intent(Intent.ACTION_SEND)
-        shareIntent.type = "image/png" // ou "text/plain" para compartilhar texto
-
         // Salve a captura de tela em algum lugar temporário
         // (você também pode salvar em cache ou armazenamento externo)
-        val path = MediaStore.Images.Media.insertImage(contentResolver, screenshot, "Screenshot", null)
-        val screenshotUri = Uri.parse(path)
+        val screenshotFile = File(externalCacheDir, "screenshot.png")
 
-        // Adicione a captura de tela à intenção
-        shareIntent.putExtra(Intent.EXTRA_STREAM, screenshotUri)
+        try {
+            val fileOutputStream = FileOutputStream(screenshotFile)
+            screenshot.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream)
+            fileOutputStream.flush()
+            fileOutputStream.close()
 
-        // Inicie a atividade de compartilhamento
-        startActivity(Intent.createChooser(shareIntent, "Compartilhar via"))
+            // Crie uma intenção de compartilhamento
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "image/png" // ou "text/plain" para compartilhar texto
+
+            // Adicione a captura de tela à intenção
+            val screenshotUri = Uri.fromFile(screenshotFile)
+            shareIntent.putExtra(Intent.EXTRA_STREAM, screenshotUri)
+
+            // Inicie a atividade de compartilhamento
+            startActivity(Intent.createChooser(shareIntent, "Compartilhar via"))
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
+
 
 
     override fun onClick(view: View?) {
