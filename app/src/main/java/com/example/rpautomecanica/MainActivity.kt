@@ -11,6 +11,7 @@ import android.os.Build
 import android.os.StrictMode
 import android.provider.MediaStore
 import android.widget.Button
+import androidx.core.content.FileProvider
 import java.io.File
 import java.io.FileOutputStream
 
@@ -24,7 +25,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             StrictMode.setVmPolicy(it)
         }
 
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnShare.setOnClickListener {
             compartilharTela()
         }
-
     }
 
     private fun compartilharTela() {
@@ -46,7 +45,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         rootView.isDrawingCacheEnabled = false
 
         // Salve a captura de tela em algum lugar temporário
-        // (você também pode salvar em cache ou armazenamento externo)
         val screenshotFile = File(externalCacheDir, "screenshot.png")
 
         try {
@@ -55,13 +53,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             fileOutputStream.flush()
             fileOutputStream.close()
 
+            // Obtenha a URI usando FileProvider
+            val screenshotUri = FileProvider.getUriForFile(
+                this,
+                "seu.pacote.aqui.fileprovider",
+                screenshotFile
+            )
+
             // Crie uma intenção de compartilhamento
             val shareIntent = Intent(Intent.ACTION_SEND)
-            shareIntent.type = "image/png" // ou "text/plain" para compartilhar texto
-
-            // Adicione a captura de tela à intenção
-            val screenshotUri = Uri.fromFile(screenshotFile)
+            shareIntent.type = "image/png"
             shareIntent.putExtra(Intent.EXTRA_STREAM, screenshotUri)
+
+            // Garanta que outras aplicações possam ler o arquivo
+            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
 
             // Inicie a atividade de compartilhamento
             startActivity(Intent.createChooser(shareIntent, "Compartilhar via"))
